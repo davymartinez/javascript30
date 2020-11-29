@@ -1,12 +1,13 @@
 :root {
   --base: #ffc600;
+  --background: #162e3e;
   --spacing: 10px;
   --blur: 0px;
 }
 
 body {
   text-align: center;
-  background: #162e3e;
+  background: var(--background);
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100;
