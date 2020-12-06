@@ -5,12 +5,12 @@ const cities = [];
 
 fetch(endpoint)
   .then(blob => blob.json())
-  .then(data => cities.push(...data));
+  .then(data => cities.push(...data)); // spread the data into cities[] so we don't get a nested array
 
 function findMatches(wordToMatch, cities) {
   return cities.filter(place => {
-    const regex = new RegExp(wordToMatch, 'gi');
-    return place.city.match(regex) || place.state.match(regex);
+    const regex = new RegExp(wordToMatch, 'gi'); // 'gi' -> global + case-insensitive regex
+    return place.city.match(regex) || place.state.match(regex); // matches either city or state
   });
 }
 
@@ -31,7 +31,8 @@ function displayMatches() {
     return `
       <li>
         <span class="name">${cityName}, ${stateName}</span>
-        <span class="population">${numberWithCommas(place.population)}</span>
+        <span class="population">Pop.: ${numberWithCommas(place.population)}</span>
+        <span class="growth">Grow.: ${place.growth_from_2000_to_2013}</span>
       </li>
     `;
   }).join('');

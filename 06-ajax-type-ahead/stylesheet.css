@@ -68,6 +68,10 @@ span.population {
   font-size: 15px;
 }
 
+span.growth {
+  font-size: 15px;
+}
+
 .hl {
   background: #ffc600;
 }

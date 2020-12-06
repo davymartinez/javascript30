@@ -2,12 +2,12 @@
 const panels = document.querySelectorAll('.panel');
 
 function toggleOpen() {
-  // console.log('Hello');
+  // toggles the transition transform of the panels
   this.classList.toggle('open');
 }
 
 function toggleActive(e) {
-  // console.log(e.propertyName);
+  // toggles the open-active classes of the panels
   if (e.propertyName.includes('flex')) {
     this.classList.toggle('open-active');
   }
